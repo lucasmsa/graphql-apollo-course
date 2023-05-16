@@ -6,7 +6,7 @@ const resolvers = {
         dataSources: { trackAPI }
       } = contextValue;
 
-      trackAPI.getTracksForHome();
+      return trackAPI.getTracksForHome();
     }
   },
   Track: {
