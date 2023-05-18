@@ -20,7 +20,7 @@ const TRACKS = gql`
   }
 `;
 
-const Tracks = () => {
+export function Tracks() {
   const { data, loading, error } = useQuery(TRACKS);
 
   return (
@@ -32,6 +32,4 @@ const Tracks = () => {
       </QueryResult>
     </Layout>
   );
-};
-
-export default Tracks;
+}

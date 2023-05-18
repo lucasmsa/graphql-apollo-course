@@ -7,6 +7,14 @@ const resolvers = {
       } = contextValue;
 
       return trackAPI.getTracksForHome();
+    },
+    track: async (_, args, contextValue) => {
+      const { id } = args;
+      const {
+        dataSources: { trackAPI }
+      } = contextValue;
+
+      return trackAPI.getTrack(id);
     }
   },
   Track: {
@@ -17,6 +25,14 @@ const resolvers = {
       } = contextValue;
 
       return trackAPI.getAuthor(authorId);
+    },
+    modules: (parent, _, contextValue) => {
+      const { id } = parent;
+      const {
+        dataSources: { trackAPI }
+      } = contextValue;
+
+      return trackAPI.getTrackModules(id);
     }
   }
 };
