@@ -7,6 +7,21 @@ const typeDefs = gql`
     track(id: ID!): Track
   }
 
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
+
+  type IncrementTrackViewsResponse {
+    "Represents the status of the mutation"
+    code: Int!
+    "Indicates whether the mutation was successful"
+    success: Boolean!
+    "Message for the UI"
+    message: String!
+    "Newly updated track"
+    track: Track
+  }
+
   "Modules that teach about a subject"
   type Track {
     id: ID!
